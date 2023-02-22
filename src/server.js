@@ -1,8 +1,9 @@
 
 import express from 'express';
 import configViewEngine from './configs/viewEngine';
+require('dotenv').config();
 const app = express();
-const port = 8080
+const port = process.env.port || 8080;
 configViewEngine(app);
 app.get('/', (req, res) => {
     res.render('test/index.ejs');
